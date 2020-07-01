@@ -1,0 +1,32 @@
+@import "variables";
+
+body {
+  background-color: $purple-2;
+  background-image: linear-gradient(to right, #27273C,#86377B);
+  height: 100%;
+  font-family: Karla, sans-serif;
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $purple-5;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $purple-4;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $purple-4;
+}
+

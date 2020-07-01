@@ -1,0 +1,9 @@
+<app-spinner *ngIf="isBusy && !songs.length"></app-spinner>
+<div *ngIf="!isBusy || songs.length" class="library__container">
+  <div *ngFor="let songPair of songs" class="library__song">
+    <app-song-preview [song]="songPair.song" [inPlaylist]="songPair.inPlaylist"></app-song-preview>
+  </div>
+  <div *ngIf="songs.length === 0" class="library__empty">
+    This library will be available soon
+  </div>
+</div>

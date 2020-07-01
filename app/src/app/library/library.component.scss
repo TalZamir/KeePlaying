@@ -1,0 +1,28 @@
+@import "../../variables";
+
+
+:host {
+  .library {
+    &__container {
+      align-items: center;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      padding-bottom: 20px;
+    }
+    &__song {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+    }
+    &__empty {
+      padding: 20px 0;
+      color: $white;
+      display: flex;
+      font-size: 20px;
+      font-weight: bold;
+      justify-content: center;
+      width: 100%;
+    }
+  }
+}

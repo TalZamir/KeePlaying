@@ -1,0 +1,35 @@
+<div class="playlist__container">
+  <div class="playlist__bg"></div>
+  <div class="playlist__player">
+    <div *ngIf="playlist.length > 0 && selectedSong.id" class="playlist__video">
+      <youtube-player [playerVars]="playerVars" [videoId]="selectedSong.id" (ready)="savePlayer($event)"
+                      (change)="onStateChange($event)" [width]="320"></youtube-player>
+    </div>
+    <div *ngIf="playlist.length > 0" class="playlist__list">
+      <div class="playlist__buttons">
+        <i class="material-icons playlist__icon" (click)="nextPreviousVideo(false)">arrow_left</i>
+        <i class="material-icons playlist__icon" (click)="playPauseSong()">{{getPlayerIconToShow()}}</i>
+        <i class="material-icons playlist__icon" (click)="nextPreviousVideo(true)">arrow_right</i>
+      </div>
+      <div class="playlist__buttons-sm">
+        <i class="material-icons playlist__icon-sm" [ngClass]="{'playlist__icon-on': shuffleOn}"
+           (click)="onShuffleClicked()">shuffle</i>
+      </div>
+      <div class="playlist__songs">
+        <div *ngFor="let song of playlist; let i = index" class="playlist__song" (click)="onSongClicked(song, true)"
+             [ngClass]="{playlist__selected: song.id == selectedSong.id}">
+          <div class="playlist__number">{{i+1}}.</div>
+          <div class="playlist__name">{{song.performer}} - {{song.name}}</div>
+          <div class="playlist__actions">
+            <i class="material-icons playlist__remove" (click)="removeSong($event, i)">remove_circle</i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="playlist.length == 0" class="playlist__empty">
+      <i class="material-icons playlist__icon">music_video</i>
+      <div>Add songs to your playlist from the library in order to play them</div>
+    </div>
+  </div>
+  <div class="playlist__bg"></div>
+</div>

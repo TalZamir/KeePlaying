@@ -1,0 +1,7 @@
+export enum LIBRARY_TYPE {
+  YEARS70,
+  YEARS80,
+  YEARS90,
+  YEARS00,
+  YEARS10,
+}

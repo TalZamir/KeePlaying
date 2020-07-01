@@ -1,0 +1,67 @@
+@import "../variables";
+
+:host {
+  .keep-playing {
+    &__container {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      position: absolute;
+      width: 100%;
+      z-index: 2;
+    }
+
+    &__header {
+      width: 100%;
+    }
+
+    &__body {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+    }
+
+    &__carousel {
+      width: 100%;
+    }
+
+    &__content {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      @media (min-width: $media-m) {
+
+      }
+    }
+
+    &__footer {
+    }
+
+    &__playlist-overlay {
+      bottom: 0;
+      margin: 20px;
+      position: fixed;
+      right: 0;
+      z-index: 10;
+    }
+  }
+
+  app-carousel {
+    width: 100%;
+  }
+
+  ::ng-deep app-library {
+    width: 100%;
+  }
+
+  ::ng-deep app-playlist {
+    width: 100%;
+  }
+}
+
+.bla {
+  height: 100%;
+  width: 100%;
+}

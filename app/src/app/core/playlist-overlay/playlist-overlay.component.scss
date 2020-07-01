@@ -1,0 +1,26 @@
+@import "../../../variables";
+
+:host {
+  .playlist-overlay {
+    &__container {
+      align-items: center;
+      background-color: $yellow-1;
+      border: 2px solid $purple-2;
+      border-radius: 50%;
+      color: $purple-2;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      outline: none;
+      padding: 5px;
+      user-select: none;
+    }
+    &__icon {
+      font-size: 50px;
+    }
+    &__text {
+
+    }
+  }
+}

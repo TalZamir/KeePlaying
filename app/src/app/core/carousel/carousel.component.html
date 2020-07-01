@@ -1,0 +1,11 @@
+<div class="carousel__container">
+  <div *ngFor="let card of CARDS" class="carousel__card" [style.backgroundColor]="card.color" [routerLink]="card.url"
+       [ngClass]="{'carousel__selected': selectedCardType === card.type}">
+    <div class="carousel__year">
+      <div class="carousel__postfix">{{card.text}}</div>
+      <div *ngIf="selectedCardType === card.type" class="carousel__button"
+           (click)="onAddAllSongsClicked()">Add All Songs
+      </div>
+    </div>
+  </div>
+</div>

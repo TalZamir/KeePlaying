@@ -1,0 +1,89 @@
+@import "../../../variables";
+
+:host {
+  .song-preview {
+    &__container {
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+      display: grid;
+      height: 100px;
+      margin: 10px 5px 0;
+      width: 367px;
+      overflow: hidden;
+      &:hover {
+        .song-preview__button {
+          opacity: 0.5;
+        }
+      }
+      @media (max-width: $media-m) {
+        min-width: 300px;
+        max-width: 300px;
+      }
+    }
+    &__playing {
+      border: 1px solid $white !important;
+    }
+    &__in-playlist {
+      border: 1px dotted $yellow-1;
+    }
+    &__button {
+      grid-row: 1;
+      grid-column: 1;
+      background-color: $yellow-1;
+      display: flex;
+      justify-content: center;
+      transition: 0.25s ease-in;
+      opacity: 0;
+      user-select: none;
+      @media (max-width: $media-m) {
+        background-color: transparent;
+        display: block;
+        padding-left: 185px;
+        opacity: 0.5;
+      }
+    }
+    &__icon {
+      color: $purple-2;
+      font-size: 60px;
+      margin: 20px 5px;
+      @media (max-width: $media-m) {
+        text-align: right;
+        color: $yellow-1;
+        font-size: 45px;
+        margin: 50px 5px
+      }
+    }
+    &__data {
+      background-image: url("../../../assets/images/song-preview-pattern.png");
+      background-color: $purple-1;
+      display: grid;
+      grid-row: 1;
+      grid-column: 1;
+    }
+    &__info {
+      align-items: center;
+      color: $white;
+      display: flex;
+      flex-direction: column;
+      grid-row: 1;
+      grid-column: 1;
+      padding: 5px;
+      @media (max-width: $media-m) {
+        align-items: start;
+      }
+    }
+    &__name {
+      font-size: 18px;
+      font-weight: bold;
+    }
+    &__performer {
+      opacity: 1;
+    }
+    &__video {
+      grid-row: 1;
+      grid-column: 1;
+      margin-top: -80px;
+      opacity: 0.1;
+    }
+  }
+}

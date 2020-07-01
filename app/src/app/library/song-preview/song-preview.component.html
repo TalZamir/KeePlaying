@@ -1,0 +1,17 @@
+<div class="song-preview__container"
+     [ngClass]="{'song-preview__in-playlist': inPlaylist, 'song-preview__playing': nowPlaying}">
+  <div class="song-preview__data">
+    <div *ngIf="played" class="song-preview__video">
+      <youtube-player [playerVars]="PLAYER_VARS" [videoId]="song.id" (ready)="savePlayer($event)"
+                      (change)="onStateChange($event)"></youtube-player>
+    </div>
+    <div class="song-preview__info">
+      <div class="song-preview__name">{{song.name}}</div>
+      <div class="song-preview__performer">{{song.performer}}</div>
+    </div>
+  </div>
+  <div class="song-preview__button">
+    <i class="material-icons song-preview__icon" (click)="onPlayerButtonClicked()">{{getPlayerIcon()}}</i>
+    <i class="material-icons song-preview__icon" (click)="onPlaylistButtonClicked()">{{getPlaylistIcon()}}</i>
+  </div>
+</div>

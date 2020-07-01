@@ -1,0 +1,81 @@
+@import "../../../variables";
+
+@mixin wide() {
+  flex: 2;
+  .library__prefix {
+    opacity: 1;
+    width: inherit;
+  }
+}
+
+:host {
+  .carousel {
+    &__container {
+      background-image: url("../../../assets/images/bg-pattern.png");
+      display: flex;
+      width: 100%;
+      user-select: none;
+    }
+    &__folder {
+
+    }
+    &__card {
+      align-items: center;
+      color: rgba(255, 255, 255, 0.9);
+      cursor: pointer;
+      display: flex;
+      height: 200px;
+      flex: 1;
+      font-size: 80px;
+      justify-content: center;
+      outline: none;
+      overflow: hidden;
+      transition: 0.25s linear;
+      &:hover {
+        @include wide();
+      }
+      @media (max-width: $media-m) {
+        font-size: inherit;
+      }
+    }
+    &__selected {
+      @include wide();
+    }
+    &__year {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    &__prefix {
+      opacity: 0;
+      overflow: hidden;
+      width: 0;
+      transition: 0.25s;
+    }
+    &postfix {
+
+    }
+    &__button {
+      align-items: center;
+      background-color: rgba(0,0,0,0.5);
+      bottom: -20px;
+      cursor: pointer;
+      display: flex;
+      font-size: 18px;
+      justify-content: center;
+      position: absolute;
+      padding: 5px 10px;
+      white-space: nowrap;
+      border-radius: 5px;
+      transition: 0.25s ease-in;
+      &:hover {
+        color: $yellow-1;
+      }
+      @media (max-width: $media-m) {
+        font-size: inherit;
+        bottom: 50px;
+        left: -44px;
+      }
+    }
+  }
+}
